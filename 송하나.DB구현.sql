@@ -84,9 +84,9 @@ ask_no number(5) constraint ask_askno_pk primary key,
 ask_title varchar2(60) constraint ask_asktitle_nn not null,
 ask_name varchar2(10) constraint ask_askname_nn not null,
 ask_content varchar2(600) constraint ask_askcontent_nn not null,
-answer_content varchar2(600) constraint ask_answercontent_nn not null,
+answer_content varchar2(600),
 ask_date date constraint ask_askdate_nn not null,
-answer_date date constraint ask_answerdate_nn not null);
+answer_date date);
 
 -- admins
 create table attendance.admins(
@@ -145,13 +145,13 @@ create sequence attendance.plan_planno_seq
 
 -- insert into users
 -- companys
-insert into attendance.companys values('company', 'company', 'ÇÏ³ª¿÷½º', 1234567891, '¼­¿ï½Ã ¿µµîÆ÷±¸ ½ÅÇ³·Î 101',
-'601È£', 12554, '0228465678', 'java123@naver.com','±è¼ÒÇÇ¾Æ');
+insert into attendance.companys values('company', 'company', 'í•˜ë‚˜ì›ìŠ¤', 1234567891, 'ì„œìš¸ì‹œ ì˜ë“±í¬êµ¬ ì‹ í’ë¡œ 101',
+'601í˜¸', 12554, '0228465678', 'java123@naver.com','ê¹€ì†Œí”¼ì•„');
 
 -- employees
 insert into attendance.employees values(attendance.emp_empno_seq.nextval, 'user', 'user',
-    '¼ÛÇÏ³ª', '¼­¿ï½Ã °ü¾Ç±¸ ½Å¸²·Î 340', '601È£', 34502, '01012345678', 'java123@naver.com',
-    '2023-03-29', 'ÆÀÀå', '9510012011111', null, 'company');
+    'ì†¡í•˜ë‚˜', 'ì„œìš¸ì‹œ ê´€ì•…êµ¬ ì‹ ë¦¼ë¡œ 340', '601í˜¸', 34502, '01012345678', 'java123@naver.com',
+    '2023-03-29', 'íŒ€ì¥', '9510012011111', null, 'company');
 
 -- admins
 insert into attendance.admins values('admin', 'admin');
