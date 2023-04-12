@@ -39,21 +39,21 @@ hire_date date constraint emp_hiredate_nn not null,
 emp_position varchar2(12),
 emp_pino number(13) constraint emp_emppino_nn not null,
 profile_name varchar2(50),
-company_id varchar2(12) constraint emp_comid_fk references attendance.companys(company_id));
+company_id varchar2(12) constraint emp_comid_fk references attendance.companys(company_id) on delete cascade);
 
 -- works
 create table attendance.works(
 work_no number(5) constraint work_workno_pk primary key,
 start_time date constraint work_starttime_nn not null,
 end_time date,
-employee_no number(6) constraint work_empno_fk references attendance.employees(employee_no));
+employee_no number(6) constraint work_empno_fk references attendance.employees(employee_no) on delete cascade);
 
 -- holidays
 create table attendance.holidays(
 holiday_no number(5) constraint hol_holno_pk primary key,
 hol_date date constraint hol_holdate_nn not null,
 hol_content varchar2(30) constraint hol_holcontent_nn not null,
-employee_no number(6) constraint hol_empno_fk references attendance.employees(employee_no));
+employee_no number(6) constraint hol_empno_fk references attendance.employees(employee_no) on delete cascade);
 
 -- plans
 create table attendance.plans(
@@ -61,7 +61,7 @@ plan_no number(5) constraint plan_planno_pk primary key,
 plan_title varchar2(20) constraint plan_plantitle_nn not null,
 plan_date date constraint plan_plandate_nn not null,
 plan_content varchar2(30) constraint plan_plancontent_nn not null,
-company_id varchar2(12) constraint plan_comid_fk references attendance.companys(company_id));
+company_id varchar2(12) constraint plan_comid_fk references attendance.companys(company_id) on delete cascade);
 
 -- company_notices
 create table attendance.company_notices(
@@ -69,7 +69,7 @@ company_notice_no number(5) constraint comntc_comntcno_pk primary key,
 comntc_title varchar2(60) constraint comntc_comntctitle_nn not null,
 comntc_content varchar2(600) constraint comntc_comntccontent_nn not null,
 comntc_date date constraint comntc_comntcdate_nn not null,
-company_id varchar2(12) constraint comntc_comid_fk references attendance.companys(company_id));
+company_id varchar2(12) constraint comntc_comid_fk references attendance.companys(company_id) on delete cascade);
 
 -- public_notices
 create table attendance.public_notices(
