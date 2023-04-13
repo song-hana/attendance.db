@@ -97,14 +97,14 @@ admin_pw varchar2(5) constraint admin_adminpw_nn not null);
 create sequence attendance.emp_empno_seq
     start with 1
     increment by 1
-    maxvalue 999
+    maxvalue 999999
     nocache
     nocycle;
 
-create sequence attendance.comntc_comntc_seq
+create sequence attendance.comntc_comntcno_seq
     start with 1
     increment by 1
-    maxvalue 999
+    maxvalue 99999
     nocache
     nocycle;
     
