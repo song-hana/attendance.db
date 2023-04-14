@@ -74,14 +74,14 @@ company_id varchar2(12) constraint comntc_comid_fk references attendance.company
 -- public_notices
 create table attendance.public_notices(
 public_notice_no number(5) constraint pubntc_pubntcno_pk primary key,
-pubntc_title varchar2(60) constraint pubntc_pubntctitle_nn not null,
+pubntc_title varchar2(100) constraint pubntc_pubntctitle_nn not null,
 pubntc_content varchar2(600) constraint pubntc_pubntccontent_nn not null,
 pubntc_date date constraint pubntc_pubntcdate_nn not null);
 
 -- asks
 create table attendance.asks(
 ask_no number(5) constraint ask_askno_pk primary key,
-ask_title varchar2(60) constraint ask_asktitle_nn not null,
+ask_title varchar2(100) constraint ask_asktitle_nn not null,
 ask_name varchar2(20) constraint ask_askname_nn not null,
 ask_content varchar2(600) constraint ask_askcontent_nn not null,
 answer_content varchar2(600),

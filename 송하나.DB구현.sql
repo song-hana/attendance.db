@@ -66,7 +66,7 @@ company_id varchar2(12) constraint plan_comid_fk references attendance.companys(
 -- company_notices
 create table attendance.company_notices(
 company_notice_no number(5) constraint comntc_comntcno_pk primary key,
-comntc_title varchar2(60) constraint comntc_comntctitle_nn not null,
+comntc_title varchar2(100) constraint comntc_comntctitle_nn not null,
 comntc_content varchar2(600) constraint comntc_comntccontent_nn not null,
 comntc_date date constraint comntc_comntcdate_nn not null,
 company_id varchar2(12) constraint comntc_comid_fk references attendance.companys(company_id) on delete cascade);
@@ -74,7 +74,7 @@ company_id varchar2(12) constraint comntc_comid_fk references attendance.company
 -- public_notices
 create table attendance.public_notices(
 public_notice_no number(5) constraint pubntc_pubntcno_pk primary key,
-pubntc_title varchar2(60) constraint pubntc_pubntctitle_nn not null,
+pubntc_title varchar2(100) constraint pubntc_pubntctitle_nn not null,
 pubntc_content varchar2(600) constraint pubntc_pubntccontent_nn not null,
 pubntc_date date constraint pubntc_pubntcdate_nn not null);
 
